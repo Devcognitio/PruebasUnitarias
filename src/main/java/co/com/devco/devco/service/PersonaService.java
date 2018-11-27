@@ -13,6 +13,8 @@ public class PersonaService {
 
     private Logger logger;
 
+    //Pruebas con excepciones
+    //Pruebas parametrizadas
     public String presentarPersona(Persona persona) throws Exception {
 
         if (persona == null) {
@@ -34,6 +36,7 @@ public class PersonaService {
         return LocalDate.now().getYear();
     }
 
+    //Pruebas con test doubles
     public int calcularAnioNacimiento(int edad) throws Exception {
         int anioActual = obtenerAnioActual();
 
@@ -55,7 +58,7 @@ public class PersonaService {
         return lista;
     }
 
-    //Pruebas con powermock
+    //Pruebas con powermock - estaticos
     public String[] obtenerActividadesPorEdad(int edad) {
         EtapaVida etapaAux = EtapaService.obtenerEtapaDeVida(edad);
         if (etapaAux != null) {
@@ -65,7 +68,7 @@ public class PersonaService {
         }
     }
 
-    //Argument Captor
+    //Event Captor
     public int calcularSalario(int salarioBasicoDia) {
         int salarioBasicoMes = calcularSalarioMes(salarioBasicoDia);
         int salarioAnual = calcularSalarioAnual(salarioBasicoMes);
