@@ -32,7 +32,7 @@ public class PersonaService {
         return "Hola, soy " + persona.getNombre() + " " + persona.getApelido() + " de edad: " + persona.getEdad();
     }
 
-    protected static int obtenerAnioActual() {
+    protected int  obtenerAnioActual() {
         return LocalDate.now().getYear();
     }
 
